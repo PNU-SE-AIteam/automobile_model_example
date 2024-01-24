@@ -5,7 +5,7 @@ import pandas as pd
 class multipleLinearRegression:
     def __init__(self):
         pass
-
+  
     def forward(self, X, y, W):
         """
         Parameters:
@@ -40,7 +40,7 @@ class multipleLinearRegression:
             # alpha = learning rate
             W[i] -= alpha * (y_pred - y_true[index]) * X[index][i]
         return W
-
+   
     def train(self, X, y, epochs=10, alpha=0.001, random_state=0):
         """
         Parameters:
@@ -100,20 +100,7 @@ class multipleLinearRegression:
         prediction = sum(W_trained * X_sample)
         return prediction
 
-    def plotLoss(self, loss, epochs):
-        """
-        Parameters:
-        loss (list) : Calculated Squared Error Loss for y and y_pred
-        epochs (list): Number of Epochs
-
-        Returns: None
-        Plots a graph of Loss vs Epochs
-        """
-        plt.plot(epochs, loss)
-        plt.xlabel("Number of Epochs")
-        plt.ylabel("Loss")
-        plt.title("Plot Loss")
-        plt.show()
+    
     def score(self, y_test, y_pred):
         """
         Parameters:
