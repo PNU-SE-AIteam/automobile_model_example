@@ -20,7 +20,7 @@ class multipleLinearRegression:
         y_pred = sum(W * X)
         loss = (
             (y_pred - y) ** 2
-        ) / 2  # Loss = Squared Error, we introduce 1/2 for ease in the calculation
+        ) / 2  # 1/2 for ease
         return loss, y_pred
 
     def updateWeights(self, X, y_pred, y_true, W, alpha, index):
@@ -54,8 +54,8 @@ class multipleLinearRegression:
         loss (float) : Calculated Sqaured Error Loss for y and y_pred
         """
 
-        num_rows = X.shape[0]  # Number of Rows
-        num_cols = X.shape[1]  # Number of Columns
+        num_rows = X.shape[0]  
+        num_cols = X.shape[1]  
         W = np.random.randn(1, num_cols) / np.sqrt(num_rows)  # Weight Initialization
 
         # Calculating Loss and Updating Weights
@@ -137,3 +137,15 @@ class multipleLinearRegression:
         r2 = 1 - (SSres / SStot)
 
         return r2
+    def score_rmse(self, y_true, y_pred):
+        """
+        Parameters:
+        y_true (array) : Actual target variable
+        y_pred (array) : Predicted target variable
+    
+        Returns:
+        rmse (float) : Root Mean Square Error
+        """
+        residuals = y_true - y_pred
+        rmse = np.sqrt(np.mean(residuals**2))
+        return rmse
