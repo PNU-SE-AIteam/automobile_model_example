@@ -37,7 +37,7 @@ class multipleLinearRegression:
         W (array) : Update Values of Weight
         """
         for i in range(X.shape[1]):
-            # alpha = learning rate, rest of the RHS is derivative of loss function
+            # alpha = learning rate
             W[i] -= alpha * (y_pred - y_true[index]) * X[index][i]
         return W
 
@@ -85,7 +85,7 @@ class multipleLinearRegression:
 
         Returns:
         test_pred (list) : Predicted Target Variable
-        test_loss (list) : Calculated Sqaured Error Loss for y and y_pred
+        test_loss (list) : Calculated Squared Error Loss for y and y_pred
         """
         test_pred = []
         test_loss = []
@@ -103,7 +103,7 @@ class multipleLinearRegression:
     def plotLoss(self, loss, epochs):
         """
         Parameters:
-        loss (list) : Calculated Sqaured Error Loss for y and y_pred
+        loss (list) : Calculated Squared Error Loss for y and y_pred
         epochs (list): Number of Epochs
 
         Returns: None

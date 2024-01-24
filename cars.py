@@ -149,13 +149,6 @@ full_df = one_hot_encode(full_df, columns=['Make', 'Fuel Type', 'Transmission', 
 
 
 
-full_df.head()
-
-
-
-full_df.info()
-
-
 
 y = full_df[['Price']].values
 X = full_df[['Engine']].values
